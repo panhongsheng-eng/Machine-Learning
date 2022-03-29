@@ -158,8 +158,8 @@ print(iris.data)
  
  ### 数据集数据展示
  print(iris.feature_names)
- 
-//结果： ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+ ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+
  
 ##查看数据集的输出结果
 print(iris.target)
