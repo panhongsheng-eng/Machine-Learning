@@ -1,0 +1,41 @@
+机器学习实现模型评估
+
+
+目录
+1.模型评估：全数据集训练与预测值 
+2.模型评估：训练数据集和测试数据集分离 
+3.如何选择模型适合的关键参数，预测新数据对应结果
+
+
+
+#通过sklearn自带的数据包加载iris
+from sklearn import datasets
+iris = datasets.load_iris()
+
+X=iris.data
+Y=iris.target
+print(Y)
+
+
+
+from sklearn.neighbors import KNeighborsClassifier
+knn_5 = KNeighborsClassifier(n_neighbors=5)
+knn_5.fit(X,Y)
+
+
+
+Y_pred = knn_5.predict(X)
+print(Y_pred)
+print(Y_pred.shape)
+
+
+### 准确率的预测    
+from sklearn.metrics import accuracy_score
+print(accuracy_score(Y,Y_pred))
+
+
+
+knn_1 = KNeighborsClassifier(n_neighbors=1)
+knn_1.fit(X,Y)
+Y_pred = knn_1.predict(X)
+print(accuracy_score(Y,Y_pred))
