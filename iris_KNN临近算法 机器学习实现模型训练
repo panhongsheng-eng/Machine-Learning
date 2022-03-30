@@ -1,0 +1,40 @@
+### iris_KNN临近算法
+机器学习实现模型训
+
+Iris数据集的加载练
+
+#通过sklearn自带的数据包加载iris
+from sklearn import datasets
+iris = datasets.load_iris()
+
+X = iris.data
+y = iris.target
+
+
+#打印数据的维度
+print(X.shape)
+print(y.shape)
+
+
+#模型的调用
+from sklearn.neighbors import KNeighborsClassifier
+
+
+
+knn = KNeighborsClassifier(n_neighbors=1)
+print(knn)
+knn.fit(X,y)
+
+knn.predict([[1,2,3,4]])
+
+
+x_test = [[1,2,3,4],[2,3,1,4]]
+knn.predict(x_test)
+
+
+knn_5 = KNeighborsClassifier(n_neighbors=5)
+knn_5.fit(X,y)
+knn_5.predict(x_test)
+
+
+print(knn_5)
